@@ -1,0 +1,1416 @@
+/* ================================================
+   RESET
+================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================================
+   ROOT
+================================================ */
+
+:root {
+
+    --background: #080c12;
+
+    --panel: #0e151f;
+
+    --panel-2: #111a25;
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --text: #f3f6fa;
+
+    --muted: #7e8998;
+
+    --green: #35d49a;
+
+    --red: #ff263d;
+
+    --yellow: #ffd21c;
+
+    --damage: #e34cff;
+
+    --blue: #59a8ff;
+
+    --vehicle: #8fc8ff;
+}
+
+
+/* ================================================
+   BODY
+================================================ */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 75% 15%,
+            rgba(54, 104, 160, 0.12),
+            transparent 30%),
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* ================================================
+   APP
+================================================ */
+
+.app-shell {
+
+    min-height: 100vh;
+
+    padding: 20px;
+}
+
+
+/* ================================================
+   TOPBAR
+================================================ */
+
+.topbar {
+
+    min-height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 16px 20px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    background: rgba(14, 21, 31, 0.94);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.brand-mark {
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 11px;
+
+    color: var(--green);
+
+    background:
+        rgba(53, 212, 154, 0.06);
+
+    border:
+        1px solid rgba(53, 212, 154, 0.28);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.brand-text h1 {
+
+    font-size: 17px;
+
+    letter-spacing: 1.8px;
+}
+
+
+.brand-text p {
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.system-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 12px rgba(53, 212, 154, 0.7);
+}
+
+
+.bus-badge {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+.bus-badge span {
+
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+
+.bus-badge strong {
+
+    font-size: 12px;
+}
+
+
+/* ================================================
+   DASHBOARD
+================================================ */
+
+.dashboard {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 0.72fr) minmax(600px, 2fr);
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+.left-panel {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* ================================================
+   INTELLIGENCE CARD
+================================================ */
+
+.intel-card {
+
+    padding: 19px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(17, 26, 37, 0.96),
+            rgba(10, 15, 22, 0.98));
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.27);
+}
+
+
+.card-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.title-group {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.icon {
+
+    width: 37px;
+    height: 37px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.traffic-icon {
+
+    color: var(--blue);
+
+    background:
+        rgba(89, 168, 255, 0.09);
+}
+
+
+.damage-icon {
+
+    color: var(--damage);
+
+    background:
+        rgba(227, 76, 255, 0.09);
+}
+
+
+.title-group h2 {
+
+    font-size: 12px;
+
+    letter-spacing: 0.4px;
+}
+
+
+.title-group p {
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+}
+
+
+/* ================================================
+   LIVE
+================================================ */
+
+.live {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: var(--green);
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.live span {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 8px rgba(53, 212, 154, 0.8);
+}
+
+
+/* ================================================
+   TRAFFIC OVERVIEW
+================================================ */
+
+.traffic-overview {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.density-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.density-box span {
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.density-box strong {
+
+    color: var(--red);
+
+    font-size: 21px;
+
+    text-shadow:
+        0 0 12px rgba(255, 38, 61, 0.35);
+}
+
+
+.vehicle-circle {
+
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(89, 168, 255, 0.4);
+
+    background:
+        radial-gradient(circle,
+            #121c28 55%,
+            transparent 56%);
+
+    box-shadow:
+        0 0 18px rgba(89, 168, 255, 0.08);
+}
+
+
+.vehicle-circle strong {
+
+    font-size: 20px;
+}
+
+
+.vehicle-circle span {
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================================================
+   VEHICLE SUMMARY
+================================================ */
+
+.vehicle-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 17px;
+}
+
+
+.vehicle-summary-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 10px 8px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+.vehicle-summary-item span {
+
+    color: var(--muted);
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+}
+
+
+.vehicle-summary-item strong {
+
+    color: var(--vehicle);
+
+    font-size: 12px;
+}
+
+
+/* ================================================
+   CARD FOOTER
+================================================ */
+
+.card-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.card-footer div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.card-footer span {
+
+    color: var(--muted);
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+}
+
+
+.card-footer strong {
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+
+/* ================================================
+   ROAD DAMAGE
+================================================ */
+
+.damage-number {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+
+.damage-number strong {
+
+    color: var(--damage);
+
+    font-size: 20px;
+
+    text-shadow:
+        0 0 10px rgba(227, 76, 255, 0.25);
+}
+
+
+.damage-number span {
+
+    color: var(--muted);
+
+    font-size: 6px;
+}
+
+
+/* 4 Sub-categories grid for Road Damage */
+
+.damage-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+.damage-summary-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(227, 76, 255, 0.15);
+
+    background: rgba(227, 76, 255, 0.04);
+}
+
+
+.damage-summary-item span {
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+
+.damage-summary-item strong {
+
+    color: var(--damage);
+
+    font-size: 14px;
+}
+
+
+.damage-list-header {
+
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.damage-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 17px;
+}
+
+
+.damage-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.045);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+.damage-symbol {
+
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 7px;
+
+    color: var(--damage);
+
+    background:
+        rgba(227, 76, 255, 0.08);
+
+    font-size: 13px;
+}
+
+
+.damage-info {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.damage-info strong {
+
+    font-size: 9px;
+}
+
+
+.damage-info span {
+
+    color: var(--muted);
+
+    font-size: 7px;
+}
+
+
+.zone {
+
+    color: var(--muted);
+
+    font-size: 6px;
+}
+
+
+/* ================================================
+   MAP PANEL
+================================================ */
+
+.map-panel {
+
+    min-width: 0;
+
+    min-height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: var(--panel);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================================================
+   MAP HEADER
+================================================ */
+
+.map-header {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px 19px;
+
+    border-bottom:
+        1px solid var(--border);
+
+    background:
+        rgba(17, 26, 37, 0.75);
+}
+
+
+.map-label {
+
+    color: var(--muted);
+
+    font-size: 6px;
+
+    letter-spacing: 1.3px;
+}
+
+
+.map-header h2 {
+
+    margin-top: 5px;
+
+    font-size: 12px;
+}
+
+
+.map-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.map-live {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.map-live span {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px rgba(53, 212, 154, .7);
+}
+
+
+/* ================================================
+   FIT ROUTE
+================================================ */
+
+.fit-route-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 9px 12px;
+
+    border:
+        1px solid rgba(53, 212, 154, 0.32);
+
+    border-radius: 8px;
+
+    color: var(--green);
+
+    background:
+        rgba(53, 212, 154, 0.07);
+
+    cursor: pointer;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: .8px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+}
+
+
+.fit-route-button:hover {
+
+    background:
+        rgba(53, 212, 154, 0.15);
+
+    border-color:
+        rgba(53, 212, 154, 0.65);
+
+    box-shadow:
+        0 0 16px rgba(53, 212, 154, 0.12);
+
+    transform:
+        translateY(-1px);
+}
+
+
+.fit-route-button:active {
+
+    transform:
+        translateY(0);
+}
+
+
+.fit-route-button span {
+
+    font-size: 14px;
+}
+
+
+.map-fit-button {
+
+    padding: 8px 11px;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+}
+
+
+/* ================================================
+   MAP
+================================================ */
+
+#map {
+
+    flex: 1;
+
+    min-height: 570px;
+
+    background: #101820;
+}
+
+
+.leaflet-container {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* ================================================
+   MAP FOOTER
+================================================ */
+
+.map-footer {
+
+    padding: 12px 18px;
+
+    border-top:
+        1px solid var(--border);
+
+    background:
+        rgba(13, 19, 28, .97);
+}
+
+
+.legend-title {
+
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-size: 6px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.legend {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    flex-wrap: wrap;
+}
+
+
+.legend div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #aeb8c5;
+
+    font-size: 7px;
+}
+
+
+.legend-dot {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+
+.legend-dot.bus {
+
+    background: white;
+
+    box-shadow:
+        0 0 5px white;
+}
+
+
+.legend-dot.traffic-high {
+
+    background: var(--red);
+
+    box-shadow:
+        0 0 8px rgba(255, 38, 61, 0.8);
+}
+
+
+.legend-dot.traffic-medium {
+
+    background: var(--yellow);
+
+    box-shadow:
+        0 0 8px rgba(255, 210, 28, 0.8);
+}
+
+
+.legend-dot.traffic-low {
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 8px rgba(53, 212, 154, 0.8);
+}
+
+
+.legend-warning {
+
+    color: var(--damage);
+
+    font-size: 12px;
+}
+
+
+/* ================================================
+   BUS MARKER
+================================================ */
+
+.bus-map-marker {
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border:
+        3px solid #111923;
+
+    box-shadow:
+        0 0 0 5px rgba(255, 255, 255, .15),
+        0 4px 15px rgba(0, 0, 0, .5);
+
+    font-size: 14px;
+}
+
+
+/* ================================================
+   INDIVIDUAL VEHICLE MARKER
+================================================ */
+
+.vehicle-map-marker {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background:
+        var(--vehicle);
+
+    border:
+        2px solid #ffffff;
+
+    box-shadow:
+        0 0 7px rgba(143, 200, 255, 0.95),
+        0 0 14px rgba(143, 200, 255, 0.55);
+
+    z-index: 4;
+}
+
+
+/* ================================================
+   TRAFFIC LOCATION MARKER
+================================================ */
+
+.traffic-map-marker {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid #ffffff;
+
+    box-shadow:
+        0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ================================================
+   SELECTED ZONE (shown in left panel on dot click)
+================================================ */
+
+.selected-zone {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 10px 12px;
+
+    margin-bottom: 14px;
+
+    border-radius: 8px;
+
+    border:
+        1px solid rgba(255, 38, 61, 0.35);
+
+    background:
+        rgba(255, 38, 61, 0.06);
+}
+
+
+.selected-zone span {
+
+    color: var(--muted);
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+}
+
+
+.selected-zone strong {
+
+    color: var(--red);
+
+    font-size: 12px;
+}
+
+
+/* ================================================
+   SELECTED DAMAGE ITEM (clicked from the map)
+================================================ */
+
+.damage-item.selected {
+
+    border-color: var(--damage);
+
+    background: rgba(227, 76, 255, 0.10);
+}
+
+
+/* ================================================
+   DAMAGE MARKER
+================================================ */
+
+.damage-map-marker {
+
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--damage);
+
+    background:
+        #160f1b;
+
+    border:
+        2px solid var(--damage);
+
+    box-shadow:
+        0 0 0 3px rgba(227, 76, 255, 0.10),
+        0 0 12px rgba(227, 76, 255, 0.40);
+
+    font-size: 13px;
+
+    z-index: 5;
+}
+
+
+/* ================================================
+   POPUPS
+================================================ */
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+
+    background:
+        #111923;
+
+    color: white;
+}
+
+
+.leaflet-popup-content {
+
+    margin: 13px;
+}
+
+
+.popup-title {
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.popup-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin: 5px 0;
+
+    font-size: 8px;
+}
+
+
+.popup-row span {
+
+    color: #7e8998;
+}
+
+
+.popup-row strong {
+
+    font-weight: 600;
+}
+
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+
+@media (max-width: 1100px) {
+
+    .dashboard {
+
+        grid-template-columns:
+            minmax(290px, .85fr) minmax(500px, 1.5fr);
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .map-panel {
+
+        min-height: 600px;
+    }
+
+
+    #map {
+
+        min-height: 500px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .app-shell {
+
+        padding: 10px;
+    }
+
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .header-right {
+
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+
+    .vehicle-summary {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .map-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .map-header-actions {
+
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+
+    .legend {
+
+        gap: 10px;
+    }
+
+}

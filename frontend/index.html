@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Urban Intelligence | BUS-01</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                UI
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    URBAN INTELLIGENCE
+                </h1>
+
+                <p>
+                    AI-POWERED URBAN ROAD MONITORING
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+
+            <div class="bus-badge">
+
+                <span>
+                    BUS
+                </span>
+
+                <strong>
+                    01
+                </strong>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN DASHBOARD
+    ========================================== -->
+
+    <main class="dashboard">
+
+
+        <!-- =====================================
+             LEFT INTELLIGENCE PANEL
+        ====================================== -->
+
+        <section class="left-panel">
+
+
+            <!-- =================================
+                 TRAFFIC INTELLIGENCE
+            ================================== -->
+
+            <article class="intel-card">
+
+
+                <div class="card-header">
+
+                    <div class="title-group">
+
+                        <div class="icon traffic-icon">
+                            ↗
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                Traffic Intelligence
+                            </h2>
+
+                            <p>
+                                Vehicle concentration detected along BUS-01 route
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="live">
+
+                        <span></span>
+
+                        LIVE
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- Traffic overview -->
+
+                <div class="traffic-overview">
+
+
+                    <div class="density-box">
+
+                        <span>
+                            TRAFFIC LOCATIONS
+                        </span>
+
+                        <strong id="trafficLocationCount">
+                            00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vehicle-circle">
+
+                        <strong id="vehicleCount">
+                            0
+                        </strong>
+
+                        <span>
+                            CURRENT LOC.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Selected traffic location -->
+
+                <div class="selected-zone" id="selectedZone">
+
+                    <span>
+                        CURRENT LOCATION
+                    </span>
+
+                    <strong id="selectedZoneCount">
+                        Loading current location...
+                    </strong>
+
+                </div>
+
+
+
+                <!-- Vehicle information for current location -->
+
+                <div class="vehicle-summary">
+
+
+                    <div class="vehicle-summary-item">
+
+                        <span>
+                            CARS
+                        </span>
+
+                        <strong id="carCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vehicle-summary-item">
+
+                        <span>
+                            BIKES
+                        </span>
+
+                        <strong id="bikeCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vehicle-summary-item">
+
+                        <span>
+                            AUTOS
+                        </span>
+
+                        <strong id="autoCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vehicle-summary-item">
+
+                        <span>
+                            OTHER
+                        </span>
+
+                        <strong id="otherCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Traffic footer -->
+
+                <div class="card-footer">
+
+
+                    <div>
+
+                        <span>
+                            BUS
+                        </span>
+
+                        <strong>
+                            BUS-01
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            VEHICLE DETECTION
+                        </span>
+
+                        <strong>
+                            ACTIVE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 ROAD DAMAGE INTELLIGENCE
+            ================================== -->
+
+            <article class="intel-card">
+
+
+                <div class="card-header">
+
+
+                    <div class="title-group">
+
+
+                        <div class="icon damage-icon">
+                            ⚠
+                        </div>
+
+
+                        <div>
+
+                            <h2>
+                                Road Damage Intelligence
+                            </h2>
+
+                            <p>
+                                Total route road damage summary
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="damage-number">
+
+                        <strong id="damageCount">
+                            0
+                        </strong>
+
+                        <span>
+                            TOTAL DETECTED
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 4 Road Damage Sub-categories -->
+
+                <div class="damage-summary">
+
+
+                    <div class="damage-summary-item">
+
+                        <span>
+                            LONGITUDINAL CRACK
+                        </span>
+
+                        <strong id="d00Count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="damage-summary-item">
+
+                        <span>
+                            ALLIGATOR CRACK
+                        </span>
+
+                        <strong id="d20Count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="damage-summary-item">
+
+                        <span>
+                            POTHOLE
+                        </span>
+
+                        <strong id="d40Count">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="damage-summary-item">
+
+                        <span>
+                            WHITE LINE / PAINT BLUR
+                        </span>
+
+                        <strong id="d44Count">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="damage-list-header">
+                    <span>INDIVIDUAL DAMAGE OBSERVATIONS</span>
+                </div>
+
+                <div class="damage-list" id="damageList" style="max-height:180px; overflow-y:auto;">
+
+                    <!-- filled in by script.js from real detections -->
+
+                </div>
+
+
+
+                <div class="card-footer">
+
+
+                    <div>
+
+                        <span>
+                            BUS
+                        </span>
+
+                        <strong>
+                            BUS-01
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            LAST UPDATE
+                        </span>
+
+                        <strong>
+                            LIVE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             MAP PANEL
+        ====================================== -->
+
+        <section class="map-panel">
+
+
+            <div class="map-header">
+
+
+                <div>
+
+                    <span class="map-label">
+                        GIS VISUALIZATION
+                    </span>
+
+                    <h2>
+                        BUS-01 ROUTE MONITORING
+                    </h2>
+
+                </div>
+
+
+
+                <div class="map-header-actions">
+
+
+                    <div class="map-live">
+
+                        <span></span>
+
+                        LIVE POSITION
+
+                    </div>
+
+
+                    <button
+                        class="fit-route-button map-fit-button"
+                        id="fitRouteButton"
+                    >
+
+                        <span>
+                            ⌖
+                        </span>
+
+                        FIT ROUTE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="map"></div>
+
+
+
+            <!-- Map legend -->
+
+            <div class="map-footer">
+
+
+                <div class="legend-title">
+                    MAP LEGEND
+                </div>
+
+
+                <div class="legend">
+
+
+                    <div>
+
+                        <span class="legend-dot bus"></span>
+
+                        BUS-01
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot traffic-high"></span>
+
+                        HIGH TRAFFIC (RED)
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot traffic-medium"></span>
+
+                        MEDIUM TRAFFIC (YELLOW)
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot traffic-low"></span>
+
+                        LOW TRAFFIC (GREEN)
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-warning">
+                            ⚠
+                        </span>
+
+                        ROAD DAMAGE
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
