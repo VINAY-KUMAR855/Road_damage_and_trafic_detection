@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Datasets: ignore everything except the link file
+datasets/*
+!datasets/dataset_link.txt
+
+# Experiment outputs
+experiments/runs/
+runs/
+
+# Keep this specific prediction directory
+!runs/detect/
+!runs/detect/predict-2/
+
+# Videos: ignore everything except best1.mp4
+sample_videos/*
+!sample_videos/best1.mp4
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Backup files
+*~
