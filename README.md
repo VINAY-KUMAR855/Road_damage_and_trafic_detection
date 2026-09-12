@@ -9,7 +9,7 @@ Urban Intelligence is an AI-powered road monitoring and traffic intelligence sys
 ### 1. AI Detection Model Output
 The trained YOLO model automatically identifies road abnormalities and vehicle types in real time:
 
-![Sample Road Damage Detection](runs/detect/predict-2/train-3_conf0.25/India_003774.jpg)
+![Sample Road Damage Detection](output_image.jpg)
 
 ### 2. Live Interactive Dashboard
 The web dashboard visualizes route data, traffic locations with color-coded dots, and road damage statistics:
